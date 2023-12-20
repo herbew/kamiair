@@ -36,7 +36,12 @@ sudo apt install pip
 
 python3 -m pip install --user pipenv
 
+CLONE & COPY .env
+--
 git clone  https://github.com/herbew/kamiair.git
+cd kamiair
+cp env_default.env .env
+
 
 
 IF PRODUCTION
@@ -82,8 +87,11 @@ assume the directoris /home/herbew
 /home/herbew/envkamiair/bin/python3 kamiair/manage.py shell
 
 
-MAKEMIGRATIONS
-=============
+MAKEMIGRATIONS & MIGRATE
+--
+source envkamiair/bin/activat
+cd kamiair/
+
 python manage.py makemigrations users
 python manage.py makemigrations masters
 
@@ -92,8 +100,21 @@ python manage.py migrate users
 python manage.py migrate masters
 
 
+COLLECT STATIC FOLDER
+--
+source envkamiair/bin/activat
+cd kamiair/
 
+python manage.py collectstatic
 
+SUPER USER
+--
+source envkamiair/bin/activat
+cd kamiair/
+
+python manage.py createsuperuser
+admin
+password
 
 
 
