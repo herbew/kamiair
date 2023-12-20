@@ -99,6 +99,7 @@ python manage.py migrate sites
 python manage.py migrate users
 python manage.py migrate masters
 
+python manage.py migrate
 
 COLLECT STATIC FOLDER
 --
