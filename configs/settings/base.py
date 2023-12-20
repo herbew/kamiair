@@ -157,6 +157,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.locale.LocaleMiddleware',
+    'allauth.account.middleware.AccountMiddleware' # Only django-allauth v0.56+
 ]
 
 # STATIC
