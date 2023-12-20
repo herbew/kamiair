@@ -3,23 +3,19 @@ from __future__ import unicode_literals, absolute_import
 from django.conf import settings
 from django.urls import include, path
 from django.conf.urls.static import static
-from django.conf.urls.i18n import i18n_patterns
 
 from django.contrib import admin
 from django.views import defaults as default_views
 from kamiair.libs.rest_framework_swagger.views import get_swagger_view
 schema_view = get_swagger_view(title='KAMI Airlines API')
 
-urlpatterns = [
-    path('i18n/', include('django.conf.urls.i18n')),
-]
 
-urlpatterns += i18n_patterns(
+urlpatterns = [
     path("", schema_view, name="list_api"),
     path(settings.ADMIN_URL, admin.site.urls),
     path("api-auth/", include('rest_framework.urls', 
                     namespace='api-auth')),
-    ) + static(
+    ] + static(
     settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
 )
 
