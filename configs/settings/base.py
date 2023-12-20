@@ -65,11 +65,12 @@ THIRD_PARTY_APPS = [
     'allauth.account',
     'rest_framework',
     'rest_framework_json_api',
-    'rest_framework_swagger',
+    #'rest_framework_swagger',
     'django_extensions'
 ]
 
 LOCAL_APPS = [
+    'kamiair.libs.rest_framework_swagger',
     'kamiair.apps.users.apps.UsersAppConfig',
     'kamiair.apps.masters.apps.MastersAppConfig',
 ]

@@ -7,7 +7,7 @@ from django.conf.urls.i18n import i18n_patterns
 
 from django.contrib import admin
 from django.views import defaults as default_views
-from rest_framework_swagger.views import get_swagger_view
+from kamiair.libs.rest_framework_swagger.views import get_swagger_view
 schema_view = get_swagger_view(title='KAMI Airlines API')
 
 urlpatterns = [
