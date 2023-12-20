@@ -70,6 +70,7 @@ THIRD_PARTY_APPS = [
 
 LOCAL_APPS = [
     'kamiair.apps.users.apps.UsersAppConfig',
+    'kamiair.apps.masters.apps.MastersAppConfig',
 ]
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
