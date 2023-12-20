@@ -14,6 +14,9 @@ sudo apt install postgresql postgresql-contrib
 sudo -u postgres psql -c "CREATE USER ukamiair WITH ENCRYPTED PASSWORD 'PwDkamiairSatu1Dua3';"
 sudo -u postgres psql -c "CREATE DATABASE db_kamiair;"
 
+
+sudo -u postgres psql db_kamiair -c "GRANT ALL PRIVILEGES ON DATABASE db_kamiair TO ukamiair;"
+sudo -u postgres psql db_kamiair -c "GRANT ALL ON SCHEMA public TO ukamiair;"
 sudo -u postgres psql db_kamiair -c "GRANT ALL ON ALL TABLES IN SCHEMA public to ukamiair;"
 sudo -u postgres psql db_kamiair -c "GRANT ALL ON ALL SEQUENCES IN SCHEMA public to ukamiair;"
 sudo -u postgres psql db_kamiair -c "GRANT ALL ON ALL FUNCTIONS IN SCHEMA public to ukamiair;"
