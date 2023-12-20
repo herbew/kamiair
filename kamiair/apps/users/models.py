@@ -4,13 +4,9 @@ from __future__ import unicode_literals, absolute_import
 import logging
 
 from django.contrib.auth.models import AbstractUser
-from django.urls import reverse, reverse_lazy
 from django.db import models
 
 from django.utils.translation import gettext_lazy as _
-from django.db.models import Count, Sum
-from django.core.exceptions import ObjectDoesNotExist
-from django.db.models.signals import pre_save, post_save, pre_delete, post_delete
 
 from kamiair.cores.choices import USER_TYPE_CHOICES, GENDER_CHOICES
 
