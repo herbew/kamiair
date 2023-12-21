@@ -92,23 +92,33 @@ MAKEMIGRATIONS & MIGRATE
 source envkamiair/bin/activat
 cd kamiair/
 
-python manage.py makemigrations users
-python manage.py makemigrations masters
+python3 manage.py makemigrations users
+python3 manage.py makemigrations masters
 
-python manage.py migrate sites
-python manage.py migrate users
-python manage.py migrate masters
+python3 manage.py migrate sites
+python3 manage.py migrate users
+python3 manage.py migrate masters
 
-python manage.py migrate
+python3 manage.py migrate
 
 COLLECT STATIC FOLDER
 --
 source envkamiair/bin/activat
 cd kamiair/
 
-python manage.py collectstatic
+python3 manage.py collectstatic
 
-SUPER USER
+
+LOAD DATA
+--
+python3 manage.py loaddata 001_users_user
+python3 manage.py loaddata 002_account_emailaddress
+
+python3 manage.py loaddata 003_masters_airlines
+
+
+
+SUPER USER if needed 
 --
 source envkamiair/bin/activat
 cd kamiair/
@@ -116,6 +126,7 @@ cd kamiair/
 python manage.py createsuperuser
 admin
 password
+
 
 
 
