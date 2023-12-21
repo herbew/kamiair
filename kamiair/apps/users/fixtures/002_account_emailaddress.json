@@ -1,0 +1,14 @@
+[
+	{
+        "pk": 1, 
+        "model": "account.emailaddress", 
+        "fields": {
+           	  "email": "herbew@gmail.com",
+			  "verified": true,
+			  "primary": true,
+			  "user_id": 1
+        }
+    }
+    
+]
+    

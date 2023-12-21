@@ -45,7 +45,7 @@ class Airlines(TimeStampedModel):
     class Meta:
         app_label = "masters"
         verbose_name = u"Airlines"
-        verbose_name_plural = u"Airlines"
+        verbose_name_plural = u"0001-Airlines"
         
         ordering = ["code", "name"]
     
