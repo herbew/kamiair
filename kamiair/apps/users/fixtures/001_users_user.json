@@ -1,0 +1,26 @@
+[
+	{
+        "pk": 1, 
+        "model": "users.user", 
+        "fields": {
+           	  "password": "argon2$argon2id$v=19$m=102400,t=2,p=8$RXF1d3hwZUdSbDEwWTByZFJxa1BxbQ$Tl8J5hNRSjiqaLsQAI9hjMAbvCNULJT9f2/fRXcPPVk",
+			  "last_login": "2023-12-20T23:51:18+00:00",
+			  "is_superuser": true,
+			  "username": "admin",
+			  "first_name": "Heribertus",
+			  "last_name": "Rustyawan",
+			  "email": "herbew@gmail.com",
+			  "is_staff": true,
+			  "is_active": true,
+			  "date_joined": "2023-12-20T23:04:26+00:00",
+			  "name": "Heribertus Rustyawan",
+			  "gender": null,
+			  "birth_city": null,
+			  "birth_date": null,
+			  "typed": null,
+			  "mobile": null
+        }
+    }
+    
+]
+    
