@@ -2,7 +2,7 @@
 Base settings to build other settings files upon.
 """
 
-import environ, os
+import environ, os, sys
 from datetime import datetime
 
 ROOT_DIR = environ.Path(__file__) - 3  # (kamiair/configs/settings/base.py - 3 = kamiair/)
@@ -33,9 +33,19 @@ DEBUG = env.bool('DJANGO_DEBUG', False)
 # DATABASES = {
 #     'default': env.db(default='postgis://postgres:postgres@postgres:5432/postgres')
 # }
-DATABASES = {
-    'default': env.db('DATABASE_URL', default='postgres:///db_kamiair'),
-}
+
+if sys.argv[1:2] == ['test']:
+    DATABASES = {    
+        'default': {
+        "ENGINE": "django.db.backends.sqlite3",
+        "TEST": {
+            "NAME": os.path.join(BASE_DIR, "test_db.sqlite3"),
+        }
+    }}
+else:
+    DATABASES = {
+        'default': env.db('DATABASE_URL', default='postgres:///db_kamiair'),
+    }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 
 
