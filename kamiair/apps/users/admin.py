@@ -38,8 +38,5 @@ class UserAdmin(AuthUserAdmin):
     form = MyUserChangeForm
     add_form = MyUserCreationForm
 
-admin.site.register(CustomerProfile)
-admin.site.register(ClientProfile)
-admin.site.register(CustomerClientRelation)
     
   
