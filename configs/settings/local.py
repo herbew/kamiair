@@ -8,7 +8,7 @@ DEBUG = True
 # https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 SECRET_KEY = env('DJANGO_SECRET_KEY', default='alhO5ET1ChIYsJhQVTfxshMToR0hFOnwAITnc02lOOyeqILwMEZ9C13rJWJVfH6s')
 # https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
-IP_DEVELOPMENT = ["192.168.0.%s" % i for i in range(1, 255)]
+IP_DEVELOPMENT = ["192.168.0.%s" % i for i in range(1, 255)] + ["192.168.1.%s" % i for i in range(1, 255)] 
 IP_MOBILE = ["192.168.43.%s" % i for i in range(1, 255)]
 ALLOWED_HOSTS = [
     "localhost",
