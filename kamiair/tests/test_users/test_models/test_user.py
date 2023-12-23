@@ -7,8 +7,8 @@ class UserTestCase(TestCase):
     def setUp(self):
         User.objects.create(username="herbew")
         
-    def test(self):
-        user = User.objects.get("herbew")
+    def test_retrieve_user(self):
+        user = User.objects.get(username="herbew")
         self.assertEqual(user.username,'herbew')
     
     
