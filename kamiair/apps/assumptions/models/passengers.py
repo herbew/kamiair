@@ -48,7 +48,7 @@ class PassengerAssumptions(TimeStampedModel):
             db_index=True)
     
     class Meta:
-        app_label = "passengers"
+        app_label = "assumptions"
         verbose_name = u"PassengerAssumptions"
         verbose_name_plural = u"0001-Passenger Assumptions"
         
