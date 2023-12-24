@@ -12,7 +12,7 @@ class AircraftTestCase(TestCase):
         Aircrafts.objects.create(airline=airline, tail_number=self.TAIL_NUMBER)
         
     def test_retrieve_aircraft(self):
-        aircraft = Aircraft.objects.get(tail_number=self.TAIL_NUMBER)
+        aircraft = Aircrafts.objects.get(tail_number=self.TAIL_NUMBER)
         self.assertEqual(aircraft.airline.code, self.AIRLINE_CODE)
         self.assertEqual(aircraft.tail_number, self.TAIL_NUMBER)
         
