@@ -10,12 +10,17 @@ class AircraftTestCase(TestCase):
     def setUp(self):
         airline = Airlines.objects.create(code=self.AIRLINE_CODE, name="KAMI Airlines" )
         Aircrafts.objects.create(airline=airline, tail_number=self.TAIL_NUMBER)
+    
+    def test_retrieve_airline(self):
+        aircraft = Aircrafts.objects.get(tail_number=self.TAIL_NUMBER)
+        self.assertEqual(aircraft.airline.code, self.AIRLINE_CODE)
         
     def test_retrieve_aircraft(self):
         aircraft = Aircrafts.objects.get(tail_number=self.TAIL_NUMBER)
         self.assertEqual(aircraft.airline.code, self.AIRLINE_CODE)
         self.assertEqual(aircraft.tail_number, self.TAIL_NUMBER)
-        
+    
+    def test_retrieve_aircraft_engine(self):
         fuel_capacity = aircraft.id * aircraft.CONST_CAPACITY
         fuel_consume = aircraft.id / aircraft.CONST_CONSUME
         fuel_consume_add = fuel_consume * aircraft.CONST_ADD_CONSUME

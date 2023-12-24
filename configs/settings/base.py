@@ -83,6 +83,7 @@ LOCAL_APPS = [
     'kamiair.libs.rest_framework_swagger',
     'kamiair.apps.users.apps.UsersAppConfig',
     'kamiair.apps.masters.apps.MastersAppConfig',
+    'kamiair.apps.assumes.apps.AssumesAppConfig',
 ]
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps

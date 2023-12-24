@@ -53,6 +53,8 @@ class PassengerAssumptions(TimeStampedModel):
         verbose_name = u"PassengerAssumptions"
         verbose_name_plural = u"0001-Passenger Assumptions"
         
+        unique_together = (("aircraft", "total_passenger"),)
+        
         ordering = ["aircraft", "total_passenger", ]
     
     def __init__(self, *args, **kwargs):
@@ -93,7 +95,8 @@ def passenger_assumptions_save(sender, instance, created, *args, **kwargs):
                              fuel_consume)
         
         instance.max_minutes = fuel_capacity / total_consumption
-        instance.save()
+        if created:
+            instance.save()
         
-post_save.connect(passenger_assumptions_save, sender=Aircrafts)
+post_save.connect(passenger_assumptions_save, sender=PassengerAssumptions)
 
