@@ -57,17 +57,14 @@ class PassengerAssumptionsTestCase(TestCase):
     def test_retrieve_passenger_assumption(self):
         for airplane in self.AIRCRAFTS: 
             
-            aircraft = Aircrafts.objects.get(
-                tail_number=self.AIRCRAFTS[airplane]['tail_number'])
-            
             pa = PassengerAssumptions.objects.get(
-                aircraft=aircraft,
+                aircraft__tail_number=self.AIRCRAFTS[airplane]['tail_number'],
                 total_passenger=self.AIRCRAFTS[airplane]['total_passenger']
                 )
             
-            fuel_capacity = airplane.aircraft.id * airplane.aircraft.CONST_CAPACITY
-            fuel_consume = airplane.aircraft.id / airplane.aircraft.CONST_CONSUME
-            fuel_consume_add = fuel_consume * airplane.aircraft.CONST_ADD_CONSUME
+            fuel_capacity = pa.aircraft.id * pa.aircraft.CONST_CAPACITY
+            fuel_consume = pa.aircraft.id / pa.aircraft.CONST_CONSUME
+            fuel_consume_add = fuel_consume * pa.aircraft.CONST_ADD_CONSUME
             
             total_consumption = ((pa.total_passenger * fuel_consume_add) + 
                              fuel_consume)
