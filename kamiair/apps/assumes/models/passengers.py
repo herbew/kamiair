@@ -8,7 +8,6 @@ from django.utils.translation import gettext_lazy as _
 from django.db.models.signals import post_save
 
 from kamiair.apps.masters.models.aircrafts import Aircrafts
-from jedi.inference.value import instance
 
 log = logging.getLogger(__name__)
 
