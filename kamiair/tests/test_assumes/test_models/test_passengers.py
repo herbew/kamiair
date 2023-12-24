@@ -4,7 +4,7 @@ from django.test import TestCase
 
 from kamiair.apps.masters.models.airlines import Airlines
 from kamiair.apps.masters.models.aircrafts import Aircrafts
-from kamiair.apps.assumes.models.total_passengers import PassengerAssumptions
+from kamiair.apps.assumes.models.passengers import PassengerAssumptions
 
 class PassengerAssumptionsTestCase(TestCase):
     
