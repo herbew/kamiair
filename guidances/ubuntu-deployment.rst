@@ -89,7 +89,7 @@ assume the directoris /home/herbew
 
 MAKEMIGRATIONS & MIGRATE
 --
-source envkamiair/bin/activat
+source envkamiair/bin/activate
 cd kamiair/
 
 python3 manage.py makemigrations users
@@ -103,7 +103,7 @@ python3 manage.py migrate
 
 COLLECT STATIC FOLDER
 --
-source envkamiair/bin/activat
+source envkamiair/bin/activate
 cd kamiair/
 
 python3 manage.py collectstatic
@@ -120,7 +120,7 @@ python3 manage.py loaddata 003_masters_airlines
 
 SUPER USER if needed 
 --
-source envkamiair/bin/activat
+source envkamiair/bin/activate
 cd kamiair/
 
 python manage.py createsuperuser
