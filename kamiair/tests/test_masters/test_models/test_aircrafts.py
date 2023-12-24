@@ -2,6 +2,7 @@ from __future__ import unicode_literals, absolute_import
 
 from django.test import TestCase
 from kamiair.apps.masters.models.airlines import Airlines
+from kamiair.apps.masters.models.aircrafts import Aircrafts
 
 class AircraftTestCase(TestCase):
     AIRLINE_CODE = "KAMI"
