@@ -21,6 +21,7 @@ class AircraftTestCase(TestCase):
         self.assertEqual(aircraft.tail_number, self.TAIL_NUMBER)
     
     def test_retrieve_aircraft_engine(self):
+        aircraft = Aircrafts.objects.get(tail_number=self.TAIL_NUMBER)
         fuel_capacity = aircraft.id * aircraft.CONST_CAPACITY
         fuel_consume = aircraft.id / aircraft.CONST_CONSUME
         fuel_consume_add = fuel_consume * aircraft.CONST_ADD_CONSUME
