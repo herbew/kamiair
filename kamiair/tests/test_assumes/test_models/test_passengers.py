@@ -56,8 +56,12 @@ class PassengerAssumptionsTestCase(TestCase):
     
     def test_retrieve_passenger_assumption(self):
         for airplane in self.AIRCRAFTS: 
+            
+            aircraft = Aircrafts.objects.get(
+                tail_number=self.AIRCRAFTS[airplane]['tail_number'])
+            
             pa = PassengerAssumptions.objects.get(
-                aircraft__tail_number=self.AIRCRAFTS[airplane]['tail_number'],
+                aircraft=aircraft,
                 total_passenger=self.AIRCRAFTS[airplane]['total_passenger']
                 )
             
