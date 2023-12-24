@@ -119,7 +119,8 @@ def aircraft_save(sender, instance, created, *args, **kwargs):
         consume = pivot / instance.CONST_CONSUME
         instance.fuel_consume = consume
         instance.fuel_consume_add = consume * instance.CONST_ADD_CONSUME
-        instance.save()
+        if created:
+            instance.save()
         
 post_save.connect(aircraft_save, sender=Aircrafts)
 
