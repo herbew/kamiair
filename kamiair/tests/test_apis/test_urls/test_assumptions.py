@@ -46,7 +46,7 @@ class PassengerAssumptionsAPITests(APITestCase, URLPatternsTestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.json()['data'], "No support GET method!")
         
-    def test_post_assumption_passanger(self):
+    def test_post_assumption_passanger_01(self):
         url = reverse('apis:post_assumption_passenger')
         headers = {'Content-Type':'application/x-www-form-urlencoded'}
         params = dict(
@@ -57,12 +57,20 @@ class PassengerAssumptionsAPITests(APITestCase, URLPatternsTestCase):
         response = self.client.post(url, 
                                     data=params, 
                                     headers=headers,
-                                    #auth=(self._username, self._password),
                                     format='json',
                                     verify=False)
         
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        #self.assertEqual(len(response.data), 1)
+        
+        data = response.json()['data'][0]
+        
+        pa = PassengerAssumptions.objects.get(
+            aicraft__id=params["aircraft_id"],
+            total_passenger=params["total_passenger"])
+        
+        self.assertEqual(data["attributes"]["aircraft"]["id"], params["aircraft_id"])
+        self.assertEqual(data["attributes"]["total_passenger"], params["total_passenger"])
+        self.assertEqual(data["attributes"]["max_minutes"], pa.max_minutes)
         
     def tearDown(self):
         return super().tearDown()
