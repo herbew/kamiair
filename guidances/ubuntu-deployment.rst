@@ -111,7 +111,7 @@ python3 manage.py collectstatic
 
 LOAD DATA
 --
-python3 manage.py loaddata 001_users_user
+python3 manage.py loaddata 001_users_user #as createsuperuser
 python3 manage.py loaddata 002_account_emailaddress
 
 python3 manage.py loaddata 003_masters_airlines
@@ -124,9 +124,11 @@ source envkamiair/bin/activate
 cd kamiair/
 
 python manage.py createsuperuser
-admin
-password
 
+
+TEST
+--
+python3 manage.py test -v 2 tests
 
 
 
