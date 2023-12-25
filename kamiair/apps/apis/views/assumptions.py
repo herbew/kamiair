@@ -107,9 +107,5 @@ class GetPassengerAssumptionsAPIView(generics.ListAPIView):
             return queryset
             
                 
-    def get(self, request, *args, **kwargs):
-        return Response(_("No support GET method!"))
     
-    def post(self, request, *args, **kwargs):
-        return self.list(request, *args, **kwargs)
     
