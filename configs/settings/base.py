@@ -83,7 +83,8 @@ LOCAL_APPS = [
     'kamiair.libs.rest_framework_swagger',
     'kamiair.apps.users.apps.UsersAppConfig',
     'kamiair.apps.masters.apps.MastersAppConfig',
-    'kamiair.apps.assumptions.apps.assumptionsAppConfig',
+    'kamiair.apps.assumptions.apps.AssumptionsAppConfig',
+    'kamiair.apps.apis.apps.ApisAppConfig'
 ]
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -298,8 +299,12 @@ REST_FRAMEWORK = {
     'SEARCH_PARAM': 'filter[search]',
     'TEST_REQUEST_RENDERER_CLASSES': (
         'rest_framework_json_api.renderers.JSONRenderer',
+        'rest_framework.renderers.MultiPartRenderer',
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.TemplateHTMLRenderer'
     ),
     'TEST_REQUEST_DEFAULT_FORMAT': 'vnd.api+json'
+    
     
 }
 

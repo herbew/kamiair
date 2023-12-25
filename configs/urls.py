@@ -13,6 +13,8 @@ schema_view = get_swagger_view(title='KAMI Airlines API')
 urlpatterns = [
     path("", schema_view, name="list_api"),
     path(settings.ADMIN_URL, admin.site.urls),
+    path("api/", include('kamiair.apps.apis.urls', 
+                    namespace='apis')),
     path("api-auth/", include('rest_framework.urls', 
                     namespace='api-auth')),
     ] + static(
