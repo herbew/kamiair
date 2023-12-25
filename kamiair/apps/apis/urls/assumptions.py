@@ -4,7 +4,10 @@ import logging
 
 from django.urls import path
 
-from kamiair.apps.apis.views.assumptions import PostPassengerAssumptionsAPIView
+from kamiair.apps.apis.views.assumptions import (
+    PostPassengerAssumptionsAPIView,
+    GetPassengerAssumptionsAPIView
+    )
 
 log = logging.getLogger(__name__)
 
