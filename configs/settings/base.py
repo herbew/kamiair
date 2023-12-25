@@ -76,7 +76,7 @@ THIRD_PARTY_APPS = [
     'rest_framework',
     'rest_framework_json_api',
     #'rest_framework_swagger',
-    'django_filters',
+    'django_filter',
     'django_extensions'
 ]
 
