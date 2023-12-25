@@ -3,7 +3,7 @@ from __future__ import unicode_literals, absolute_import
 import logging
 from datetime import datetime, timedelta
 
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from rest_framework import generics, status
 from rest_framework.response import Response
