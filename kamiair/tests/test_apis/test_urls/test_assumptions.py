@@ -32,6 +32,13 @@ class PassengerAssumptionsAPITests(APITestCase, URLPatternsTestCase):
         self.assertEqual(airline.code, self.AIRLINE_CODE)
         self.assertEqual(airline.name, "KAMI Airlines")
         
+    def test_retrieve_aircrafts(self):
+        i = 1
+        for aircraft in Aircrafts.objects.all().order_by("id"):
+            self.assertEqual(aircraft.id, i)
+            self.assertEqual(aircraft.tail_number, self.AIRCRAFTS[i-1])
+            i += 1
+        
     # def test_retrieve_airline(self):
     #     """
     #     Ensure we can create a new account object.
