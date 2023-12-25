@@ -57,7 +57,6 @@ class PassengerAssumptionsAPITests(APITestCase, URLPatternsTestCase):
         response = self.client.post(url, 
                                     data=params, 
                                     headers=headers,
-                                    format='json',
                                     verify=False)
         
         self.assertEqual(response.status_code, status.HTTP_200_OK)
