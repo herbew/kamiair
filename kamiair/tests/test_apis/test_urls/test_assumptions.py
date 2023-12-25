@@ -1,6 +1,7 @@
 from __future__ import unicode_literals, absolute_import
 
 from django.urls import include, path, reverse
+from rest_framework import status
 from rest_framework.test import APITestCase, URLPatternsTestCase
 
 from kamiair.apps.masters.models.airlines import Airlines
@@ -38,27 +39,30 @@ class PassengerAssumptionsAPITests(APITestCase, URLPatternsTestCase):
             self.assertEqual(aircraft.id, i)
             self.assertEqual(aircraft.tail_number, self.AIRCRAFTS[i-1])
             i += 1
+            
+    def test_get_assumption_passanger(self):
+        url = reverse('apis:post_assumption_passenger')
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(response.json()['data'], "No support GET method!")
         
-    # def test_retrieve_airline(self):
-    #     """
-    #     Ensure we can create a new account object.
-    #     """
-    #     url = reverse('apis:post_assumption_passenger')
-    #
-    #     headers = {'Content-Type':'application/x-www-form-urlencoded'}
-    #     params = dict(
-    #             aircraft_id=1,
-    #             total_passenger=10,
-    #         )
-    #
-    #     response = self.client.post(url, 
-    #                                 data=params, 
-    #                                 headers=headers,
-    #                                 #auth=(self._username, self._password),
-    #                                 format='json',
-    #                                 verify=False)
-    #     self.assertEqual(response.status_code, status.HTTP_200_OK)
-    #     self.assertEqual(len(response.data), 1)
+    def test_post_assumption_passanger(self):
+        url = reverse('apis:post_assumption_passenger')
+        headers = {'Content-Type':'application/x-www-form-urlencoded'}
+        params = dict(
+                aircraft_id=1,
+                total_passenger=10,
+            )
+    
+        response = self.client.post(url, 
+                                    data=params, 
+                                    headers=headers,
+                                    #auth=(self._username, self._password),
+                                    format='json',
+                                    verify=False)
+        
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        #self.assertEqual(len(response.data), 1)
         
     def tearDown(self):
         return super().tearDown()
