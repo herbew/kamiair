@@ -54,8 +54,7 @@ class GetPassengerAssumptionsAPIView(generics.ListAPIView):
             queryset = PassengerAssumptions.objects.filter(aircraft=aircraft, total_passenger=total_passenger)
             
         return queryset
-            
-            
+    
 class PostPassengerAssumptionsAPIView(generics.ListAPIView):
     serializer_class = PassengerAssumptionsSerializer
     permission_classes = [] #[IsAuthenticated]
@@ -108,6 +107,7 @@ class PostPassengerAssumptionsAPIView(generics.ListAPIView):
     
 
 
+            
                 
     
     
