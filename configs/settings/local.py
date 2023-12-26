@@ -14,7 +14,7 @@ ALLOWED_HOSTS = [
     "localhost",
     "0.0.0.0",
     "127.0.0.1",
-    "147.139.191.205"
+    "147.139.191.205", 'testserver'
 ] + IP_DEVELOPMENT + IP_MOBILE
 
 # CACHES

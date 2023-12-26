@@ -2,7 +2,7 @@ from __future__ import unicode_literals, absolute_import
 
 from django.urls import include, path, reverse
 from rest_framework import status
-from rest_framework.test import APITestCase, URLPatternsTestCase
+from rest_framework.test import APITestCase, URLPatternsTestCase, APIClient
 
 from kamiair.apps.masters.models.airlines import Airlines
 from kamiair.apps.masters.models.aircrafts import Aircrafts
@@ -40,11 +40,27 @@ class PassengerAssumptionsAPITests(APITestCase, URLPatternsTestCase):
             self.assertEqual(aircraft.tail_number, self.AIRCRAFTS[i-1])
             i += 1
             
-    def test_get_assumption_passanger(self):
-        url = reverse('apis:post_assumption_passenger')
+    def test_get_assumption_passanger_01(self):
+        params = dict(
+                aircraft_id=1,
+                total_passenger=10,
+            )
+        
+        url = reverse('apis:get_assumption_passenger', 
+                      args=[params["aircraft_id"], 
+                            params["total_passenger"]])
+        
         response = self.client.get(url)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.json()['data'], "No support GET method!")
+        data = response.json()['data'][0]
+        
+        pa = PassengerAssumptions.objects.get(
+            aircraft__id=params["aircraft_id"],
+            total_passenger=params["total_passenger"])
+        
+        self.assertEqual(data["attributes"]["aircraft"]["id"], params["aircraft_id"])
+        self.assertEqual(data["attributes"]["total_passenger"], params["total_passenger"])
+        self.assertEqual(data["attributes"]["max_minutes"], pa.max_minutes)
         
     def test_post_assumption_passanger_01(self):
         url = reverse('apis:post_assumption_passenger')
@@ -53,11 +69,10 @@ class PassengerAssumptionsAPITests(APITestCase, URLPatternsTestCase):
                 aircraft_id=1,
                 total_passenger=10,
             )
-    
-        response = self.client.post(url, 
-                                    data=params, 
-                                    headers=headers,
-                                    verify=False)
+        
+        
+        client = APIClient()
+        response = client.post(url, dict(aircraft_id=1, total_passenger=10))
         
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         
