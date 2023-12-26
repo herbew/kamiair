@@ -118,14 +118,6 @@ python3 manage.py loaddata 003_masters_airlines
 python3 manage.py loaddata 004_masters_aircrafts
 
 
-SUPER USER if needed 
---
-source envkamiair/bin/activate
-cd kamiair/
-
-python manage.py createsuperuser
-
-
 TEST
 --
 python3 manage.py test -v 2 tests
