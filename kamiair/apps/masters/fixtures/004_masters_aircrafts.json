@@ -1,0 +1,143 @@
+[
+	{
+        "pk": 1, 
+        "model": "masters.aircrafts", 
+        "fields": {
+           	"created": "2023-12-25T17:55:37.493675+00:00",
+		    "modified": "2023-12-25T17:55:37.494893+00:00",
+		    "tail_number": "KM-001",
+		    "fuel_capacity": 200,
+		    "fuel_consume": 1.25,
+		    "fuel_consume_add": 0.0025,
+		    "user_update": "admin",
+		    "airline_id": 1
+        }
+    },
+   {
+        "pk": 2, 
+        "model": "masters.aircrafts", 
+        "fields": {
+        	"created": "2023-12-25T17:56:05.236126+00:00",
+		    "modified": "2023-12-25T17:56:05.236568+00:00",
+		    "tail_number": "KM-002",
+		    "fuel_capacity": 400,
+		    "fuel_consume": 2.5,
+		    "fuel_consume_add": 0.005,
+		    "user_update": "admin",
+		    "airline_id": 1
+    	}
+    },
+    {
+        "pk": 3, 
+        "model": "masters.aircrafts", 
+        "fields": {
+        	"created": "2023-12-25T17:56:26.989593+00:00",
+		    "modified": "2023-12-25T17:56:26.990043+00:00",
+		    "tail_number": "KM-003",
+		    "fuel_capacity": 600,
+		    "fuel_consume": 3.75,
+		    "fuel_consume_add": 0.0075,
+		    "user_update": "admin",
+		    "airline_id": 1
+    	}
+    },
+    {
+        "pk": 4, 
+        "model": "masters.aircrafts", 
+        "fields": {
+        	"created": "2023-12-25T17:56:39.231561+00:00",
+		    "modified": "2023-12-25T17:56:39.231984+00:00",
+		    "tail_number": "KM-004",
+		    "fuel_capacity": 800,
+		    "fuel_consume": 5,
+		    "fuel_consume_add": 0.01,
+		    "user_update": "admin",
+		    "airline_id": 1
+    	}
+    },
+    {
+        "pk": 5, 
+        "model": "masters.aircrafts", 
+        "fields": {
+        	"created": "2023-12-25T17:56:51.40144+00:00",
+		    "modified": "2023-12-25T17:56:51.401902+00:00",
+		    "tail_number": "KM-005",
+		    "fuel_capacity": 1000,
+		    "fuel_consume": 6.25,
+		    "fuel_consume_add": 0.0125,
+		    "user_update": "admin",
+		    "airline_id": 1
+    	}
+    },
+    {
+        "pk": 6, 
+        "model": "masters.aircrafts", 
+        "fields": {
+        	"created": "2023-12-26T01:45:16.184102+00:00",
+		    "modified": "2023-12-26T01:45:16.18455+00:00",
+		    "tail_number": "KM-006",
+		    "fuel_capacity": 1200,
+		    "fuel_consume": 7.5,
+		    "fuel_consume_add": 0.015,
+		    "user_update": "admin",
+		    "airline_id": 1
+    	}
+    },
+    {
+        "pk": 7, 
+        "model": "masters.aircrafts", 
+        "fields": {
+        	"created": "2023-12-26T01:45:30.160025+00:00",
+		    "modified": "2023-12-26T01:45:30.160451+00:00",
+		    "tail_number": "KM-007",
+		    "fuel_capacity": 1400,
+		    "fuel_consume": 8.75,
+		    "fuel_consume_add": 0.0175,
+		    "user_update": "admin",
+		    "airline_id": 1
+    	}
+    },
+    {
+        "pk": 8, 
+        "model": "masters.aircrafts", 
+        "fields": {
+        	"created": "2023-12-26T01:45:41.495665+00:00",
+		    "modified": "2023-12-26T01:45:41.496199+00:00",
+		    "tail_number": "KM-008",
+		    "fuel_capacity": 1600,
+		    "fuel_consume": 10,
+		    "fuel_consume_add": 0.02,
+		    "user_update": "admin",
+		    "airline_id": 1
+    	}
+    },
+    {
+        "pk": 9, 
+        "model": "masters.aircrafts", 
+        "fields": {
+        	"created": "2023-12-26T01:45:55.684378+00:00",
+		    "modified": "2023-12-26T01:45:55.684963+00:00",
+		    "tail_number": "KM-009",
+		    "fuel_capacity": 1800,
+		    "fuel_consume": 11.25,
+		    "fuel_consume_add": 0.0225,
+		    "user_update": "admin",
+		    "airline_id": 1
+    	}
+    },
+    {
+        "pk": 10, 
+        "model": "masters.aircrafts", 
+        "fields": {
+        	"created": "2023-12-26T01:46:09.718278+00:00",
+		    "modified": "2023-12-26T01:46:09.718728+00:00",
+		    "tail_number": "KM-010",
+		    "fuel_capacity": 2000,
+		    "fuel_consume": 12.5,
+		    "fuel_consume_add": 0.025,
+		    "user_update": "admin",
+		    "airline_id": 1
+    	}
+    }
+]
+    

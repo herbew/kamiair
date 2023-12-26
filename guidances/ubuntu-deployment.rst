@@ -115,7 +115,7 @@ python3 manage.py loaddata 001_users_user #as createsuperuser
 python3 manage.py loaddata 002_account_emailaddress
 
 python3 manage.py loaddata 003_masters_airlines
-
+python3 manage.py loaddata 004_masters_aircrafts
 
 
 SUPER USER if needed 
