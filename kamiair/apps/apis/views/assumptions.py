@@ -55,56 +55,7 @@ class GetPassengerAssumptionsAPIView(generics.ListAPIView):
             
         return queryset
     
-class PostPassengerAssumptionsAPIView(generics.ListAPIView):
-    serializer_class = PassengerAssumptionsSerializer
-    permission_classes = [] #[IsAuthenticated]
-    
-    
-    def get_queryset(self):
-        
-        data = self.request.data
-        
-        if data:
-            # Checking the filter 
-            try:
-                aircraft_id = int(data['aircraft_id'])
-            except:
-                raise APIException(_("Invalid Aircraft ID value! Please enter the ID = 1 to 10."))
-            
-            try:
-                total_passenger = int(data['total_passenger'])
-                if total_passenger < 0:
-                    raise APIException(_("Invalid Total Passenger value! Please enter the positive number"))
-            except:
-                raise APIException(_("Invalid Total Passenger value! Please enter the positive number"))
-                
-            # Create or get the PassengerAssumptions
-            try:
-                aircraft = Aircrafts.objects.get(id=aircraft_id)
-            except Exception as e:
-                raise APIException(_("Invalid Aircraft ID value! Please enter the ID = 1 to 10."))
-            
-            
-            queryset = PassengerAssumptions.objects.filter(aircraft=aircraft, total_passenger=total_passenger)
-            
-            if not queryset:
-                pa, created = PassengerAssumptions.objects.get_or_create(
-                    aircraft=aircraft, total_passenger=total_passenger
-                    )
-                
-                queryset = PassengerAssumptions.objects.filter(aircraft=aircraft, total_passenger=total_passenger)
-            
-            return queryset
-        else:
-            raise APIException(_("Invalid data post"))
-            
-                
-    def get(self, request, *args, **kwargs):
-        return Response(_("No support GET method!"))
-    
-    def post(self, request, *args, **kwargs):
-        return self.list(request, *args, **kwargs)
-    
+
 
 
             

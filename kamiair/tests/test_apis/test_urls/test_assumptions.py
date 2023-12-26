@@ -62,29 +62,5 @@ class PassengerAssumptionsAPITests(APITestCase, URLPatternsTestCase):
         self.assertEqual(data["attributes"]["total_passenger"], params["total_passenger"])
         self.assertEqual(data["attributes"]["max_minutes"], pa.max_minutes)
         
-    def test_post_assumption_passanger_01(self):
-        url = reverse('apis:post_assumption_passenger')
-        headers = {'Content-Type':'application/x-www-form-urlencoded'}
-        params = dict(
-                aircraft_id=1,
-                total_passenger=10,
-            )
-        
-        
-        client = APIClient()
-        response = client.post(url, dict(aircraft_id=1, total_passenger=10))
-        
-        self.assertEqual(response.status_code, status.HTTP_200_OK)
-        
-        data = response.json()['data'][0]
-        
-        pa = PassengerAssumptions.objects.get(
-            aicraft__id=params["aircraft_id"],
-            total_passenger=params["total_passenger"])
-        
-        self.assertEqual(data["attributes"]["aircraft"]["id"], params["aircraft_id"])
-        self.assertEqual(data["attributes"]["total_passenger"], params["total_passenger"])
-        self.assertEqual(data["attributes"]["max_minutes"], pa.max_minutes)
-        
     def tearDown(self):
         return super().tearDown()
